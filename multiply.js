@@ -25,6 +25,7 @@ const model = require('./model');
 
 // app.post('/test', function(request, result){
     console.log("the server is running");
+    console.log(model);
     // console.log("Data recieved ", request.body);
 
 
