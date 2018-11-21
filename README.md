@@ -15,6 +15,7 @@ $ git clone https://github.com/lfr4704/primes-coding-challenge.git
 
 ## Installing Dependencies
 ```
+$ cd to directory  
 $ npm install
 ```
 
