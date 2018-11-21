@@ -38,13 +38,13 @@ Composite Number: a natural number that can be formed by multiplying two smaller
 The Sieve of Eratosthenes algorithm can be used to find all primes up to a limit _N_.  
 
 #### Sieve of Eratosthenes logic   
-  For all numbers a: from 2 to sqrt(n) and increments of a + 1
-    If a is unmarked then
-      a is prime
-      for all multiples of a (a<n)
-        mark multiples as Composite
+  For all numbers a: from 2 to sqrt(n) and increments of a + 1  
+    If a is unmarked then  
+      a is prime  
+      for all multiples of a (a<n)  
+        mark multiples as Composite  
 
-  (Return) all unmarked numbers are prime.
+  (Return) all unmarked numbers are prime.  
 
 ### Solution
 
