@@ -7,20 +7,35 @@ numbers.
 STDOUT.
 * The first row and column of the table should have the 10 primes, with each cell containing the product of the primes for the corresponding row and column.
 
+## Getting setup
+```
+$git clone https://github.com/lfr4704/primes-coding-challenge.git
+
+```
+
+## Installing Dependencies
+```
+$ npm install
+```
+
 ## Running the server
-clone the repo and run
 ```
 'node multiply.js'
 ```
 
-## To run the tests
+## Running the tests
 ```
-git clone https://github.com/lfr4704/primes-coding-challenge.git
+$npm test
+```
 
-```
+## Logic to solve this challenge
+
 
 ## Notes
 * Consider complexity. How fast does your code run? How does it scale?
 * Consider cases where we want N primes.
 * Do not use the Prime class from stdlib (write your own code).
 * Write tests. Try to demonstrate TDD/BDD.
+
+## References
+Ava Testing https://github.com/avajs/ava
