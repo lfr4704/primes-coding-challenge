@@ -52,9 +52,12 @@ I took the following approach to solve the challenge:
 
 1. Broke the problem into different functions
 * A function checks if a number _num_ is prime
-* A function that lists the first 10 prime numbers
-* A function to format and print an array into a multiplication table format 
-* A function to print the prime numbers multiplication table
+* A function that creates an array of the first 10 prime numbers
+* A function to format and print matrix array into a stringified table format
+* A function that creates spacing in between table cells dynamically (still needs work!)
+* A function that generates the products of the prime numbers
+* A function that outputs the primes multiplication table
+* Last but not least a function that takes a user input to change the number of N primes for multiplication table.
 
 ## Notes
 * Consider complexity. How fast does your code run? How does it scale?

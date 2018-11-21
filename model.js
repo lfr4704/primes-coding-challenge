@@ -27,18 +27,19 @@ function space(val) {
   let space = '';
   let pad = 4 - val;
   while(pad > 0){
-    space += ' ';
+    space += ' '; //substitute the empty space for period in between '' to see the number of spaces visually
     pad--;
   }
   return space;
 }
 
-//function to format the prime array into multiplication table
+//function to format and print the prime array into a table
 function printMatrix(matrixArray, horizontalLabels, verticalLabels) {
-  const horizontalLabelString = ' x   ' + horizontalLabels.map(label => `[${label}]`).join(" ");
+
+  const horizontalLabelString = ' x   ' + horizontalLabels.map(label => `[${label}]`).join(' ');
 
   let stringifiedArray = matrixArray.map(
-    (row, index) => `[${verticalLabels[index]}]` + space((verticalLabels[index]+'').length) + row.join(" ")
+    (row, index) => `[${verticalLabels[index]}]` + space((verticalLabels[index]+'').length) + row.join(space((verticalLabels[index]+'').length))
   );
 
   stringifiedArray.unshift(horizontalLabelString);
@@ -58,9 +59,7 @@ function printMatrix(matrixArray, horizontalLabels, verticalLabels) {
 //     return matrixArray;
 // }
 
-let result =' x   ';
-
-
+//function to generate the products of prime numbers
 function primeTable(listOfPrimes) {
     let matrixArray = listOfPrimes.map((rowPrimeNumber, rowIndex) => {
       return listOfPrimes.map((columnPrimeNumber, columnIndex) => {
@@ -70,17 +69,19 @@ function primeTable(listOfPrimes) {
     return matrixArray;
 }
 
+//function to output the prime numbers multiplication table
 const primesMultiplicationTable = (numberOfPrimes) => {
   const listOfPrimes = listPrimes(numberOfPrimes);
   const primeTableMatrix = primeTable(listOfPrimes);
   printMatrix(primeTableMatrix, listOfPrimes, listOfPrimes);
 }
 
-primesMultiplicationTable(10);
+
 
 module.exports = {
     isPrime,
     primeTable,
+    primesMultiplicationTable,
 }
 
 
