@@ -49,7 +49,7 @@ The Sieve of Eratosthenes algorithm can be used to find all primes up to a limit
 
 ### Solution
 
-The Sieve will return all primes that are less than a limit _N_, you can't return the first _N_ primes as the coding challenge is calling for. To add that functionality I took the following approach to solve the challenge:
+The Sieve will return all primes that are less than a limit _N_, but you can't return the first _N_ primes as the coding challenge is calling for. To add that functionality the following approach was taken:
 
 1. Divided the problem into smaller problems and created multiple functions to:  
 * Checks if a number _num_ is prime
