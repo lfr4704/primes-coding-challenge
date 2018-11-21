@@ -50,14 +50,14 @@ The Sieve of Eratosthenes algorithm can be used to find all primes up to a limit
 
 The Sieve will return all primes that are less than a limit _N_, you can't return the first _N_ primes as the coding challenge is calling for. To add that functionality I took the following approach to solve the challenge:
 
-1. Broke the problem into different functions
-* A function checks if a number _num_ is prime
-* A function that creates an array of the first 10 prime numbers
-* A function to format and print matrix array into a stringified table format
-* A function that creates spacing in between table cells dynamically (still needs work!)
-* A function that generates the products of the prime numbers
-* A function that outputs the primes multiplication table
-* Last but not least a function that takes a user input to change the number of _N_ primes for multiplication table.
+1. Divided the problem into smaller problems and created multiple functions to:  
+* Checks if a number _num_ is prime
+* Create an array of the first 10 prime numbers
+* Format and print matrix array into a stringified table format
+* Create spacing in between table cells dynamically (still needs work!)
+* Generate the products of the prime numbers
+* Output the primes multiplication table
+* Take user input to change the number of _N_ primes for multiplication table.
 
 ## Notes
 * Consider complexity. How fast does your code run? How does it scale?
