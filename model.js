@@ -26,8 +26,9 @@ function listPrimes( nPrimes ) {
 function space(val) {
   let space = '';
   let pad = 4 - val;
-  while(pad-- > 0){
+  while(pad > 0){
     space += ' ';
+    pad--;
   }
   return space;
 }
@@ -37,7 +38,7 @@ function printMatrix(matrixArray, horizontalLabels, verticalLabels) {
   const horizontalLabelString = ' x   ' + horizontalLabels.map(label => `[${label}]`).join(" ");
 
   let stringifiedArray = matrixArray.map(
-    (row, index) => `[${verticalLabels[index]}]  ` + row.join("   ")
+    (row, index) => `[${verticalLabels[index]}]` + space((verticalLabels[index]+'').length) + row.join(" ")
   );
 
   stringifiedArray.unshift(horizontalLabelString);
