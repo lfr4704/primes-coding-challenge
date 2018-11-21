@@ -18,7 +18,7 @@ $ git clone https://github.com/lfr4704/primes-coding-challenge.git
 $ npm install
 ```
 
-## Running the server
+## Running the Program(server)
 ```
 $ node multiply.js
 ```
@@ -37,6 +37,7 @@ Composite Number: a natural number that can be formed by multiplying two smaller
 ### Background
 The Sieve of Eratosthenes algorithm can be used to find all primes up to a limit _N_.  
 
+#### Sieve of Eratosthenes logic   
   For all numbers a: from 2 to sqrt(n) and increments of a + 1
     If a is unmarked then
       a is prime
@@ -47,8 +48,7 @@ The Sieve of Eratosthenes algorithm can be used to find all primes up to a limit
 
 ### Solution
 
-The Sieve will return all primes that are less than a limit N, you can't return the first N primes as the coding challenge called for.
-I took the following approach to solve the challenge:
+The Sieve will return all primes that are less than a limit _N_, you can't return the first _N_ primes as the coding challenge is calling for. To add that functionality I took the following approach to solve the challenge:
 
 1. Broke the problem into different functions
 * A function checks if a number _num_ is prime
@@ -57,14 +57,14 @@ I took the following approach to solve the challenge:
 * A function that creates spacing in between table cells dynamically (still needs work!)
 * A function that generates the products of the prime numbers
 * A function that outputs the primes multiplication table
-* Last but not least a function that takes a user input to change the number of N primes for multiplication table.
+* Last but not least a function that takes a user input to change the number of _N_ primes for multiplication table.
 
 ## Notes
 * Consider complexity. How fast does your code run? How does it scale?
-* Consider cases where we want N primes.
+* Consider cases where we want _N_ primes.
 * Do not use the Prime class from stdlib (write your own code).
 * Write tests. Try to demonstrate TDD/BDD.
 
 ## References
-Ava Testing https://github.com/avajs/ava
+Ava Testing https://github.com/avajs/ava  
 Logic https://stackoverflow.com/questions/17382910/writing-first-100-prime-numbers-to-a-file-using-node-js?lq=1
