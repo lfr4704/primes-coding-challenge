@@ -1,23 +1,17 @@
-//
-//
-// function nPrimes(number) {
-//   Console.log("Enter the number of prime numbers for multiplication table: ")
-// }
 
-
-//function to check if the number is primes
-function isPrime(n) {
-  let max = Math.sqrt(n);
+//function to check if a given number is prime
+const isPrime = num => {
+  let max = Math.sqrt(num);
   for(let i = 2; i <= max; i++) {
-    if(n % i === 0 ) {
+    if(num % i === 0 ) {
       return false;
     }
   }
-  return true;
+  return num !== 1 && num !==0 && num > 0 ;
 }
 
-
-function listPrimes ( nPrimes ) {
+//Function to list the first N primes into an array
+function listPrimes( nPrimes ) {
   let arrayPrimes = [];
   for(let n = 2; nPrimes > 0; n++) {
     if( isPrime(n) ) {
@@ -28,54 +22,29 @@ function listPrimes ( nPrimes ) {
   return arrayPrimes;
 }
 
-// list the prime numbers to a string
-function primeTable2() {
-  let arrayPrimes = listPrimes(10);
-
-  let primes = ' x   ';
-    for (let rowIndex = 0; rowIndex < arrayPrimes.length; rowIndex++) {
-      for(let n = 0; n < arrayPrimes.length; n++) {
-        if( rowIndex == 0 && n > 0 ) {
-          primes +='[' + arrayPrimes[n] + ']' + ' ';
-          console.log(primes);
-        }
-        else if( n == 0 && rowIndex > 0){
-          primes += '[' + arrayPrimes[rowIndex] + ']';
-          console.log("entered second loop");
-        }
-        else if( rowIndex > 0 && n > 0 ) {
-          primes += "    " + arrayPrimes[rowIndex]*arrayPrimes[n];
-          console.log("entered third loop");
-        }
-
-      }
-      primes += '\n';
-    }
-  return primes;
+// Function to add spacing in between each number in table
+function space(val) {
+  let space = '';
+  let pad = 4 - val;
+  while(pad-- > 0){
+    space += ' ';
   }
+  return space;
+}
 
-
-// primeTable2();
-let x = [
-  [1,2,3,4],
-  [1,2,3,4],
-  [1,2,3,4],
-  [1,2,3,4],
-]
-
+//function to format the prime array into multiplication table
 function printMatrix(matrixArray, horizontalLabels, verticalLabels) {
-  const horizontalLabelString = ' x ' + horizontalLabels.map(label => `[${label}]`).join(" ");
+  const horizontalLabelString = ' x   ' + horizontalLabels.map(label => `[${label}]`).join(" ");
 
   let stringifiedArray = matrixArray.map(
-    (row, index) => `[${verticalLabels[index]}] ` + row.join(" ")
+    (row, index) => `[${verticalLabels[index]}]  ` + row.join("   ")
   );
 
   stringifiedArray.unshift(horizontalLabelString);
   console.log(stringifiedArray.join(" \n"))
 }
 
-let result =' x   ';
-
+// Alternate ES6 utilizing forEach Method
 // function primeTable(listOfPrimes) {
 //     let matrixArray = [];
 //     listOfPrimes.forEach(function(rowPrimeNumber, rowIndex) {
@@ -87,6 +56,9 @@ let result =' x   ';
 //     })
 //     return matrixArray;
 // }
+
+let result =' x   ';
+
 
 function primeTable(listOfPrimes) {
     let matrixArray = listOfPrimes.map((rowPrimeNumber, rowIndex) => {
@@ -105,12 +77,58 @@ const primesMultiplicationTable = (numberOfPrimes) => {
 
 primesMultiplicationTable(10);
 
-
-// isPrime();
-// primeTable();
-
 module.exports = {
-    // space,
     isPrime,
     primeTable,
 }
+
+
+
+// ES5 Alternate to print primes multiplication table, not efficient!
+
+//function to check if a given number is prime
+// function isPrime(n) {
+//   let max = Math.sqrt(n);
+//   for(let i = 2; i <= max; i++) {
+//     if(n % i === 0 ) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+//Function to add spacing in between each number in table
+// function space(val) {
+//   let space = '';
+//   let pad = 4 - val;
+//   while(pad-- > 0){
+//     space += ' ';
+//   }
+//   return space;
+//   console.log(val);
+// }
+
+
+//function to print prime number multiplication table
+// function primeTable2() {
+//   const arrayPrimes = listPrimes(10);
+//   console.log(arrayPrimes.length);
+//   let primes = ' x   ';
+//     for (let rowIndex = 0; rowIndex < arrayPrimes.length+1; rowIndex++) {
+//       for(let n = 0; n < arrayPrimes.length; n++) {
+//         if( rowIndex === 0 && n >= 0 ) {
+//           primes +='[' + arrayPrimes[n] + ']' + space((n + '').length+2);
+//           console.log(" the first number is " +  arrayPrimes[n]);
+//         }
+//         else if( n === 0 && rowIndex >= 0){
+//           primes += '[' + arrayPrimes[rowIndex-1] + ']';
+//         }
+//         else if( rowIndex >= 0 && n >= 0 ) {
+//           primes += space((arrayPrimes[rowIndex-1]*arrayPrimes[n] + '').length) + arrayPrimes[rowIndex-1]*arrayPrimes[n];
+//         }
+//       }
+//       primes += '\n';
+//     }
+//   return primes;
+//   }
+// primeTable2();

@@ -12,3 +12,11 @@ test('four is not a prime number', t => {
 test('one is not prime number', t => {
   t.is(isPrime(1), false);
 });
+
+test('zero is not prime number', t => {
+  t.is(isPrime(1), false);
+});
+
+test('negative one is not prime number', t => {
+  t.is(isPrime(-1), false);
+});
