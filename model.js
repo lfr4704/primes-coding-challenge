@@ -80,6 +80,7 @@ const primesMultiplicationTable = (numberOfPrimes) => {
 
 module.exports = {
     isPrime,
+    listPrimes,
     primeTable,
     primesMultiplicationTable,
 }
